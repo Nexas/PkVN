@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{0d64e122-098b-4a9e-8d0a-17a68ca3dcfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Header Files">
+      <UniqueIdentifier>{af2c6110-71b8-4e0e-8eba-13e9be130d8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Source Files">
+      <UniqueIdentifier>{17128857-8114-45f6-88a5-907f8f7953e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{d8d1c7d9-9478-4a6d-a611-8e72fa2c3267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Header Files">
+      <UniqueIdentifier>{96060a33-a554-4ee4-b1ae-b8de1c37d58f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Source Files">
+      <UniqueIdentifier>{171a8b1c-4654-4447-a51d-18bc1c6ca2fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{626c33e8-b6e5-442e-8c08-0be7a3791de5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Header Files">
+      <UniqueIdentifier>{ead42dc2-4405-409a-b79d-2100c5d5c365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Source Files">
+      <UniqueIdentifier>{c5732e4d-2744-411e-8d26-a0ef2c73f9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{602ece58-5bfa-445d-b53d-2ddd8b4b9d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Header Files">
+      <UniqueIdentifier>{7ff05b90-3ce4-4edf-9733-1c286d00a302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Source Files">
+      <UniqueIdentifier>{22c5cd30-8a9a-4f1b-a31c-152e2c6f3e96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Core\Header\CGame.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Header\CTimer.h">
+      <Filter>Util\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\States\Header\IBaseState.h">
+      <Filter>States\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\Source\CGame.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Source\WinMain.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\Source\CTimer.cpp">
+      <Filter>Util\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
