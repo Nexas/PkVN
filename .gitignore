@@ -1,4 +1,5 @@
-PkVN/Debug
+PkVN/**/Debug
+PkVN/**/Release
 PkVN/ipch
 PkVN/PkVN.opensdf
 PkVN/PkVN.sdf
