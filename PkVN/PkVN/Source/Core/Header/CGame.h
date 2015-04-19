@@ -18,6 +18,8 @@
 #include "../../States/Header/CMainMenuState.h"*/
 #include "../../States/Header/IBaseState.h"
 #include "../../Util/Header/CTimer.h"
+#include "../../Renderer/Header/CRenderer.h"
+#include "../../Renderer/Header/Camera.h"
 
 #include <stack>
 
@@ -39,7 +41,7 @@ private:
 
 	//CStopWatch	m_stopWatch;
 	
-
+	
 	
 
 	
@@ -50,6 +52,8 @@ private:
 	CTimer			m_stopWatch;
 	float		m_fElapsedTime;
 	float		m_fGameTime;
+	Camera* m_pCamera;
+	CRenderer* m_pRenderer;
 	// Proper Singleton:
 
 	// Constructor
@@ -77,7 +81,7 @@ public:
 
 	bool Input();
 	void Update();
-	void Render();
+	void Render(float fDt);
 	void PushState(IBaseState* _state);
 	void PopState(void);
 	void ClearAllStates(void);

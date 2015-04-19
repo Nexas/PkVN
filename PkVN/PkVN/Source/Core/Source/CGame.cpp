@@ -1,5 +1,6 @@
 #include "../Header/CGame.h"
 #include <ctime>
+
 //#include "../../States/Header/IBaseState.h"
 //#include "CMainMenuState.h"
 //#include "COptionsState.h"
@@ -13,6 +14,8 @@ CGame::CGame()
 	m_nImageID = -1;
 	m_nSoundID = -1;
 	//currentState = nullptr;*/
+	m_pRenderer = nullptr;
+	m_pCamera = nullptr;
 	Windowed = true;
 	m_fGameTime = 0.0f;
 }
@@ -46,6 +49,16 @@ void CGame::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int nSc
 
 	ChangeState(CMainMenuState::GetInstance());*/
 	//currentState->Enter();
+
+	m_pCamera = new Camera();
+	m_pCamera->BuildProjectionMatrix(D3DX_PI/3,(float)(nScreenWidth/nScreenHeight),0.1f,500.0f);
+	m_pCamera->SetViewPos(0.0f,0.0f,-30.0f);
+
+
+	m_pRenderer = new CRenderer();
+	m_pRenderer->InitD3D(hWnd,nScreenWidth,nScreenHeight,m_pCamera);
+
+
 	srand(unsigned int(time(0)));
 	m_stopWatch.Start();
 }
@@ -53,6 +66,10 @@ void CGame::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int nSc
 void CGame::Shutdown()
 {
 	//ChangeState(nullptr);
+
+	m_pRenderer->ShutDown();
+	delete m_pRenderer;
+	delete m_pCamera;
 
 	// Shutdown in the opposite order you initialized
 	/*if (m_pDI)
@@ -94,7 +111,7 @@ bool CGame::Main()
 	// Update
 	Update();
 	// Draw
-	Render();
+	Render(m_fElapsedTime);
 	return true;
 }
 
@@ -138,8 +155,9 @@ void CGame::Update()
 	//currentState->Update(m_fElapsedTime);
 }
 
-void CGame::Render()
+void CGame::Render(float fDt)
 {
+	m_pRenderer->Render(fDt);
 	/*m_pD3D->Clear(255, 0, 0);
 	m_pD3D->DeviceBegin();
 	m_pD3D->SpriteBegin();
