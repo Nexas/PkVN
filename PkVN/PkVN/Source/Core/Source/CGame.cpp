@@ -143,6 +143,8 @@ bool CGame::Input()
 	//	//PostQuitMessage(0);
 	//}
 	*/
+	if(GetAsyncKeyState(VK_ESCAPE))
+		PostQuitMessage(0);
 	return true;
 }
 
