@@ -52,6 +52,12 @@
     <ClInclude Include="Source\States\Header\IBaseState.h">
       <Filter>States\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Renderer\Header\Camera.h">
+      <Filter>Renderer\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer\Header\CRenderer.h">
+      <Filter>Renderer\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Source\CGame.cpp">
@@ -62,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="Source\Util\Source\CTimer.cpp">
       <Filter>Util\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer\Source\Camera.cpp">
+      <Filter>Renderer\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer\Source\CRenderer.cpp">
+      <Filter>Renderer\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
