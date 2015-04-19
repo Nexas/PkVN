@@ -23,7 +23,7 @@
 
 const char* g_szWINDOW_CLASS_NAME	= "SGDWindowClass";			//	Window Class Name.
 
-const char* g_szWINDOW_TITLE		= "Checkers";	//	Window Title.
+const char* g_szWINDOW_TITLE		= "Pokemon VN";	//	Window Title.
 const int	g_nWINDOW_WIDTH			= 1024;						//	Window Width.
 const int	g_nWINDOW_HEIGHT		= 768;						//	Window Height.
 
