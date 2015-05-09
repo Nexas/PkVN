@@ -74,10 +74,14 @@ void CRenderer::InitD3D(HWND window, int screenwidht, int screenheight, Camera* 
 	//init effects
 	ID3DXBuffer	*errors(NULL);
 
-	D3DXCreateEffectFromFile(m_pDevice, "../../../Resource/Shaders/Pyramid.fx", 0, 0, D3DXSHADER_DEBUG, 0, &m_pEffect, &errors);
+	D3DXCreateEffectFromFile(m_pDevice, "Resource/Shaders/Pyramid.fx", 0, 0, D3DXSHADER_DEBUG, 0, &m_pEffect, &errors);
 	if (errors)
 	{
 		MessageBox(m_hWnd,(char*)errors->GetBufferPointer(),0,0);
+	}
+	if(m_pEffect == nullptr)
+	{
+		MessageBox(m_hWnd,"Effect is null! Nothing will render!",0,0);
 	}
 	//----------------------
 	InitTest();
