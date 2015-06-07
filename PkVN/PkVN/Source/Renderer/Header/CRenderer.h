@@ -14,11 +14,14 @@ private:
 	IDirect3D9*						m_pD3D;					
 	IDirect3DDevice9*				m_pDevice;	
 
+
 	IDirect3DVertexDeclaration9*	m_pVertDecl;	
 	IDirect3DVertexBuffer9*			m_pVertBuffer;
 	IDirect3DIndexBuffer9*			m_pIndexBuffer;
 
 	Camera*							m_pCamera;
+
+	IDirect3DTexture9*				m_pTestTextrue;
 
 	ID3DXEffect*					m_pEffect;
 
@@ -34,6 +37,7 @@ public:
 	{
 		D3DXVECTOR3 position;
 		D3DCOLOR color;
+		D3DXVECTOR2 texcords;
 	};
 
 	CRenderer();

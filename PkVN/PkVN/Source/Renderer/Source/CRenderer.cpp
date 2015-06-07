@@ -13,6 +13,8 @@ CRenderer::CRenderer()
 	
 	m_pEffect = nullptr;
 
+	m_pTestTextrue = nullptr;
+
 	D3DXMatrixIdentity(&m_tTestMat);
 
 	m_hWnd = nullptr;
@@ -64,6 +66,7 @@ void CRenderer::InitD3D(HWND window, int screenwidht, int screenheight, Camera* 
 	{
 		{0,0,D3DDECLTYPE_FLOAT3,D3DDECLMETHOD_DEFAULT,D3DDECLUSAGE_POSITION,0},
 		{0,12, D3DDECLTYPE_D3DCOLOR, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_COLOR, 0},
+		{0,24, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 0},
 		D3DDECL_END()
 	};
 
@@ -84,6 +87,12 @@ void CRenderer::InitD3D(HWND window, int screenwidht, int screenheight, Camera* 
 		MessageBox(m_hWnd,"Effect is null! Nothing will render!",0,0);
 	}
 	//----------------------
+
+	//texture testing
+	D3DXCreateTextureFromFile(m_pDevice,"Resource/Shaders/test.png",&m_pTestTextrue);
+	if(m_pTestTextrue == nullptr)
+		MessageBox(m_hWnd,"Texture Creation error!",0,0);
+	//==============
 	InitTest();
 };
 
@@ -105,11 +114,18 @@ void CRenderer::InitTest()
 	Pyr[3].color = D3DCOLOR_ARGB(255,255,0,0); //back right
 	Pyr[4].color = D3DCOLOR_ARGB(255,0,255,255); //back left
 
+	Pyr[0].texcords = D3DXVECTOR2(0.0f,0.0f);
+	Pyr[1].texcords = D3DXVECTOR2(0.5f,0.5f);
+	Pyr[2].texcords = D3DXVECTOR2(1.0f,1.0f);
+	Pyr[3].texcords = D3DXVECTOR2(1.0f,1.0f);
+	Pyr[4].texcords = D3DXVECTOR2(0.0f,0.0f);
+
+
 	D3DXMatrixIdentity(&m_tTestMat);
 	//----------------------------------
 
 	//Create vertex buffer
-	m_pDevice->CreateVertexBuffer(pnumverts*sizeof(vertex_poscol), 0, 0, D3DPOOL_DEFAULT, &m_pVertBuffer, 0);
+	m_pDevice->CreateVertexBuffer(pnumverts*sizeof(vertex_poscol), 0, D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1, D3DPOOL_DEFAULT, &m_pVertBuffer, 0);
 
 	void *pbuffer;
 
@@ -148,7 +164,7 @@ void CRenderer::InitTest()
 	ipL[16] = 2;
 	ipL[17] = 3;
 	//----------------------------------
-
+	
 	//create index buffer
 	m_pDevice->CreateIndexBuffer(18 * sizeof(WORD), 0, D3DFMT_INDEX16, D3DPOOL_DEFAULT, &m_pIndexBuffer, NULL);
 	m_pIndexBuffer->Lock(0, 18 * sizeof(WORD), &pbuffer, 0);
@@ -183,6 +199,9 @@ void CRenderer::DrawTest()
 
 		for(unsigned i(0); i<passes; ++i)
 		{
+			
+			//m_pEffect->CommitChanges();
+
 			m_pEffect->BeginPass(i);
 			{
 				m_tTestMat._11 = 3; m_tTestMat._22 = 3; m_tTestMat._33 = 3;
@@ -194,6 +213,7 @@ void CRenderer::DrawTest()
 				m_pEffect->SetFloatArray("gCol",gCol,4);
 				m_pEffect->SetFloatArray("cola",colors,4);
 				m_pEffect->SetMatrix("gWVP", &(m_tTestMat * m_pCamera->GetViewMatrix() * m_pCamera->GetProjectionMatrix() ));
+				m_pEffect->SetTexture("tex1",m_pTestTextrue);
 				m_pEffect->CommitChanges();
 
 				m_pDevice->SetVertexDeclaration(m_pVertDecl);
@@ -212,6 +232,7 @@ void CRenderer::DrawTest()
 
 void CRenderer::ShutDown()
 {
+	SAFE_RELEASE(m_pTestTextrue);
 	SAFE_RELEASE(m_pEffect);
 	SAFE_RELEASE(m_pVertBuffer);
 	SAFE_RELEASE(m_pIndexBuffer);
