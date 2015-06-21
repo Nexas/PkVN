@@ -20,6 +20,7 @@
 #include "../../Util/Header/CTimer.h"
 #include "../../Renderer/Header/CRenderer.h"
 #include "../../Renderer/Header/Camera.h"
+#include "../../Util/Header/SeW_DirectInput.h"
 
 #include <stack>
 
@@ -48,6 +49,7 @@ private:
 	// Asset ids:
 	int m_nImageID;
 	int m_nSoundID;*/
+	CSeW_DirectInput*	m_pDI;
 	bool Windowed;
 	CTimer			m_stopWatch;
 	float		m_fElapsedTime;

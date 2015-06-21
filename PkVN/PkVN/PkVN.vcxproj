@@ -81,6 +81,7 @@
     <ClInclude Include="Source\Renderer\Header\CRenderer.h" />
     <ClInclude Include="Source\States\Header\IBaseState.h" />
     <ClInclude Include="Source\Util\Header\CTimer.h" />
+    <ClInclude Include="Source\Util\Header\SeW_DirectInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Source\CGame.cpp" />
@@ -88,6 +89,7 @@
     <ClCompile Include="Source\Renderer\Source\Camera.cpp" />
     <ClCompile Include="Source\Renderer\Source\CRenderer.cpp" />
     <ClCompile Include="Source\Util\Source\CTimer.cpp" />
+    <ClCompile Include="Source\Util\Source\SeW_DirectInput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

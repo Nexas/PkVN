@@ -35,19 +35,19 @@ CGame* CGame::GetInstance()
 void CGame::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int nScreenHeight, bool bIsWindowed)
 {
 	// Get Singleton Pointers:
+	m_pDI	=	CSeW_DirectInput::GetInstance();
 	/*m_pD3D	=  CSGD_Direct3D::GetInstance();
 	m_pTM	=  CSGD_TextureManager::GetInstance();
 	m_pFM	=  CSGD_FModManager::GetInstance();
-	m_pDI	=  CSGD_DirectInput::GetInstance();
 
 	// Initialize Singletons:
 	m_pD3D->InitDirect3D(hWnd, nScreenWidth, nScreenHeight, bIsWindowed, true);
 	Windowed = bIsWindowed;
 	m_pTM->InitTextureManager(m_pD3D->GetDirect3DDevice(), m_pD3D->GetSprite());
 	m_pFM->InitFModManager(hWnd);
-	m_pDI->InitDirectInput(hWnd, hInstance, DI_KEYBOARD | DI_MOUSE, 0);
 
 	ChangeState(CMainMenuState::GetInstance());*/
+	m_pDI->InitDirectInput(hWnd, hInstance, DI_KEYBOARD | DI_MOUSE, 0);
 	//currentState->Enter();
 
 	m_pCamera = new Camera();
