@@ -72,13 +72,13 @@ void CGame::Shutdown()
 	delete m_pCamera;
 
 	// Shutdown in the opposite order you initialized
-	/*if (m_pDI)
+	if (m_pDI)
 	{
-		m_pDI->ShutdownDirectInput();
+		m_pDI->Shutdown();
 		m_pDI = NULL;
 	}
 
-	if (m_pFM)
+	/*if (m_pFM)
 	{
 		m_pFM->ShutdownFModManager();
 		m_pFM = NULL;
