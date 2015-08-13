@@ -1,0 +1,18 @@
+17
+# timeskip
+~ PvN_SchoolGates.png
+! PvN_SchoolDays.mp3
+< PvN_AceTrainer1.png
+* PvN_Footsteps.wav
++
+- z After narrowly dodging what would be a lengthy chat with my eldery neighbor, I rished to school only to find the Student Council President waiting for me.
+- c "Hello <name>, arriving so late on the first day of the new semester?"
+- z "Yeah, sorry, I guess I overslept. But why are you waiting by the gates?"
+- c "Well, I had something to request of you, and I figured this would be the easiest way to catch you."
+- z "Oh? And what exactly would that request be?"
+@ c PvN_AceTrainerSerious.png
+- c "Well you've already proven that you're quite a hard worker, as reflected by your test scores. And if you can get your tardiness in order, I'd like for you to join the Student Council."
+- z I was thrown. I really hadn't expected this, especially coming from Miss Queen Bee herself.
+| "You can count on me!" StudentCouncil.pscr
+| "Well you see..." SCRejection.pscr
+$ 

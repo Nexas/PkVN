@@ -58,6 +58,9 @@ void CGame::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int nSc
 	m_pRenderer = new CRenderer();
 	m_pRenderer->InitD3D(hWnd,nScreenWidth,nScreenHeight,m_pCamera);
 
+	CScriptingSystem::GetInstance()->ChangeScript("Resource/Scripts/SuddenOpportunity.pscr");
+	CScriptingSystem::GetInstance()->ParseString();
+
 
 	srand(unsigned int(time(0)));
 	m_stopWatch.Start();
@@ -117,10 +120,10 @@ bool CGame::Main()
 
 bool CGame::Input()
 {
-	/*m_pDI->ReadDevices(); // usually called ONCE a frame
+	m_pDI->ReadDevices(); // usually called ONCE a frame
 
 
-	if ((m_pDI->KeyDown(DIK_LALT) && m_pDI->KeyPressed(DIK_RETURN)) || (m_pDI->KeyDown(DIK_RALT) && m_pDI->KeyPressed(DIK_RETURN)))
+	/*if ((m_pDI->KeyDown(DIK_LALT) && m_pDI->KeyPressed(DIK_RETURN)) || (m_pDI->KeyDown(DIK_RALT) && m_pDI->KeyPressed(DIK_RETURN)))
 	{
 		m_pDI->ReadDevices();
 		Windowed = !Windowed;
@@ -143,8 +146,10 @@ bool CGame::Input()
 	//	//PostQuitMessage(0);
 	//}
 	*/
-	if(GetAsyncKeyState(VK_ESCAPE))
+	if(m_pDI->KeyPressed(DIK_ESCAPE))
 		PostQuitMessage(0);
+	if (m_pDI->KeyPressed(DIK_RETURN))
+		CScriptingSystem::GetInstance()->NextLine();
 	return true;
 }
 

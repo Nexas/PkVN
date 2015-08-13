@@ -21,6 +21,7 @@
 #include "../../Renderer/Header/CRenderer.h"
 #include "../../Renderer/Header/Camera.h"
 #include "../../Util/Header/SeW_DirectInput.h"
+#include "../../Util/Header/CScriptingSystem.h"
 
 #include <stack>
 

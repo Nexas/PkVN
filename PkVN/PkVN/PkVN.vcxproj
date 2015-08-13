@@ -79,17 +79,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\Core\Header\CGame.h" />
+    <ClInclude Include="Source\Messaging\Header\CEvent.h" />
+    <ClInclude Include="Source\Messaging\Header\CEventSystem.h" />
+    <ClInclude Include="Source\Messaging\Header\IListener.h" />
     <ClInclude Include="Source\Renderer\Header\Camera.h" />
     <ClInclude Include="Source\Renderer\Header\CRenderer.h" />
     <ClInclude Include="Source\States\Header\IBaseState.h" />
+    <ClInclude Include="Source\Util\Header\CScriptingSystem.h" />
     <ClInclude Include="Source\Util\Header\CTimer.h" />
     <ClInclude Include="Source\Util\Header\SeW_DirectInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Source\CGame.cpp" />
     <ClCompile Include="Source\Core\Source\WinMain.cpp" />
+    <ClCompile Include="Source\Messaging\Source\CEventSystem.cpp" />
     <ClCompile Include="Source\Renderer\Source\Camera.cpp" />
     <ClCompile Include="Source\Renderer\Source\CRenderer.cpp" />
+    <ClCompile Include="Source\Util\Source\CScriptingSystem.cpp" />
     <ClCompile Include="Source\Util\Source\CTimer.cpp" />
     <ClCompile Include="Source\Util\Source\SeW_DirectInput.cpp" />
   </ItemGroup>

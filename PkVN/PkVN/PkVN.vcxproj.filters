@@ -41,6 +41,15 @@
     <Filter Include="States\Source Files">
       <UniqueIdentifier>{22c5cd30-8a9a-4f1b-a31c-152e2c6f3e96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Messaging">
+      <UniqueIdentifier>{a6b78a25-056b-4047-8155-b8e573d57b59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Messaging\Header Files">
+      <UniqueIdentifier>{03098288-28e3-420b-85a2-7519155c1a51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Messaging\Source Files">
+      <UniqueIdentifier>{a8454fdb-26cb-4af1-96e6-cf3538af313d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Core\Header\CGame.h">
@@ -61,6 +70,18 @@
     <ClInclude Include="Source\Util\Header\SeW_DirectInput.h">
       <Filter>Util\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Messaging\Header\CEvent.h">
+      <Filter>Messaging\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Messaging\Header\CEventSystem.h">
+      <Filter>Messaging\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Messaging\Header\IListener.h">
+      <Filter>Messaging\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Header\CScriptingSystem.h">
+      <Filter>Util\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Source\CGame.cpp">
@@ -79,6 +100,12 @@
       <Filter>Renderer\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Util\Source\SeW_DirectInput.cpp">
+      <Filter>Util\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Messaging\Source\CEventSystem.cpp">
+      <Filter>Messaging\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\Source\CScriptingSystem.cpp">
       <Filter>Util\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
